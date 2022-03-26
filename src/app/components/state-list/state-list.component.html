@@ -1,0 +1,53 @@
+<div class="contrainer">
+  <h3>Lista de paises</h3>
+  <ul class="list-group" *ngFor="let item of listCountri">
+    <li
+      class="list-group-item"
+      (click)="detail(item.name.common)"
+      data-bs-toggle="modal"
+      data-bs-target="#modalDetail"
+    >
+      {{item.name.official}}
+    </li>
+  </ul>
+
+  <div
+    class="modal fade"
+    id="modalDetail"
+    tabindex="-1"
+    aria-labelledby="Modal detalle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="titleModal"></h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-3">
+            <div class="col-4">
+              <b>Nombre comun:</b> <span id="comun"></span>
+            </div>
+            <div class="col-4"><b>Region:</b> <span id="region"></span></div>
+            <div class="col-4">
+              <b>Subregion:</b> <span id="subregion"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <b>Nombre Oficial:</b> <span id="nombreO"></span>
+            </div>
+            <div class="col-4"><b>Idiomas:</b> <span id="idiomas"></span></div>
+            <div class="col-4"><b>Monedas:</b> <span id="moneda"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
